@@ -16,3 +16,4 @@ public class WebConfig implements WebMvcConfigurer{
 		registry.addResourceHandler("/logos/**").addResourceLocations("file:"+rutaImagenes); // Windows
 		}
 }
+

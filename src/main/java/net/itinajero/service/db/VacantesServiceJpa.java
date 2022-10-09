@@ -14,37 +14,44 @@ import net.itinajero.service.IVacantesService;
 @Service
 @Primary
 public class VacantesServiceJpa implements IVacantesService {
-	
+
 	@Autowired
 	private VacantesRepository vacantesRepo;
-
+	
 	@Override
 	public List<Vacante> buscarTodas() {
+		// TODO Auto-generated method stub
+		
 		return vacantesRepo.findAll();
 	}
 
 	@Override
 	public Vacante buscarPorId(Integer idVacante) {
+		// TODO Auto-generated method stub
 		Optional<Vacante> optional = vacantesRepo.findById(idVacante);
 		if(optional.isPresent()) {
-			return optional.get();
+		  return optional.get();
 		}
 		return null;
 	}
 
 	@Override
 	public void guardar(Vacante vacante) {
+		// TODO Auto-generated method stub
 		vacantesRepo.save(vacante);
 	}
 
 	@Override
 	public List<Vacante> buscarDestacadas() {
+		
 		return vacantesRepo.findByDestacadoAndEstatusOrderByIdDesc(1, "Aprobada");
 	}
 
 	@Override
 	public void eliminar(Integer idVacante) {
+		// TODO Auto-generated method stub
 		vacantesRepo.deleteById(idVacante);
+		
 	}
 
 }
