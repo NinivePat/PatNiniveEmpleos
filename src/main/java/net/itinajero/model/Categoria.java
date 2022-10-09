@@ -9,12 +9,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Categorias")
 public class Categoria {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
 	private String descripcion;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getId() {
 		return id;
 	}
